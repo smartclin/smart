@@ -1,0 +1,22 @@
+{
+  "extends": "@smart/config/tsconfig.base.json",
+  "compilerOptions": {
+    "composite": true,
+    "declaration": true,
+    "lib": ["DOM", "DOM.Iterable"],
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "declarationMap": true,
+    "emitDeclarationOnly": true,
+    "outDir": "dist",
+    "rootDir": "src",
+    "tsBuildInfoFile": "dist/.tsbuildinfo",
+    "types": ["node"],
+    "paths": {
+      "@smart/db": ["../db/src"],
+      "@smart/auth": ["../auth/src"]
+    }
+  },
+  "include": ["src/**/*.ts", "src/serializer.ts"],
+  "references": [{ "path": "../db" }, { "path": "../auth" }]
+}

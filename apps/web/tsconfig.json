@@ -1,0 +1,61 @@
+{
+  "compilerOptions": {
+    "lib": ["ES2024", "DOM", "DOM.Iterable"],
+    "noEmit": true,
+    "paths": {
+      "@/*": ["./src/*"],
+      "@smart/api": ["../../packages/api/src"],
+      "@smart/api/*": ["../../packages/api/src/*"],
+      "@smart/auth": ["../../packages/auth/src"],
+      "@smart/auth/*": ["../../packages/auth/src/*"],
+      "@smart/db": ["../../packages/db/src"],
+      "@smart/db/*": ["../../packages/db/src/*"],
+      "@smart/ui/*": ["../../packages/ui/src/*"]
+    },
+    "types": ["vite/client"]
+  },
+  "exclude": ["node_modules", "dist", ".output"],
+  "extends": "@smart/config/tanstack.json",
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "../../packages/api/src/serializer.ts",
+    "src/components/clinical/age-milestone-tracker.tsx",
+    "src/components/clinical/allergy-alert.tsx",
+    "src/components/clinical/appointment-booking-form.tsx",
+    "src/components/clinical/appointment-reminder.tsx",
+    "src/components/clinical/appointment-slot.tsx",
+    "src/components/clinical/clinic-stats-grid.tsx",
+    "src/components/clinical/doctor-team-grid.tsx",
+    "src/components/clinical/emergency-banner.tsx",
+    "src/components/clinical/faq-accordion.tsx",
+    "src/components/clinical/feeding-guide-card.tsx",
+    "src/components/clinical/growth-chart-card.tsx",
+    "src/components/clinical/insurance-info-card.tsx",
+    "src/components/clinical/opening-hours-card.tsx",
+    "src/components/clinical/patient-card.tsx",
+    "src/components/clinical/patient-intake-form.tsx",
+    "src/components/clinical/pediatrician-bio.tsx",
+    "src/components/clinical/prescription-card.tsx",
+    "src/components/clinical/service-card.tsx",
+    "src/components/clinical/testimonial-card.tsx",
+    "src/components/clinical/vaccination-schedule.tsx",
+    "../../packages/ui/src/lib/ui-builder/store/editor-utils.ts",
+    "../../packages/ui/src/lib/ui-builder/store/editor-store.ts",
+    "../../packages/ui/src/lib/ui-builder/store/layer-store.ts",
+    "../../packages/ui/src/lib/ui-builder/store/layer-utils.ts",
+    "../../packages/ui/src/lib/ui-builder/store/schema-utils.ts",
+    "src/routes/_auth/app/growth/record.tsx"
+  ],
+  "references": [
+    {
+      "path": "../../packages/api"
+    },
+    {
+      "path": "../../packages/auth"
+    },
+    {
+      "path": "../../packages/db"
+    }
+  ]
+}

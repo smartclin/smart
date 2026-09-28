@@ -1,0 +1,27 @@
+{
+  "name": "@smart/auth",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./*": "./src/*.ts"
+  },
+  "scripts": {
+    "auth:generate": "bun --env-file=../../apps/web/.env node_modules/@better-auth/cli/dist/index.mjs generate --config ../../apps/web/src/services.ts --output ../db/src/schema/auth.ts -y",
+    "build": "tsc -b",
+    "check-types": "tsc -b"
+  },
+  "dependencies": {
+    "@better-auth/drizzle-adapter": "1.7.6",
+    "@smart/db": "workspace:*",
+    "@smart/utils": "workspace:*",
+    "better-auth": "catalog:",
+    "drizzle-orm": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@better-auth/cli": "^1.4.21",
+    "@smart/config": "workspace:*",
+    "@smart/env": "workspace:*",
+    "typescript": "catalog:"
+  }
+}

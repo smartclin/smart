@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "strictNullChecks": true,
+    "types": ["node"]
+  },
+  "extends": "@smart/config/tsconfig.base.json",
+  "files": [],
+  "references": [
+    {
+      "path": "packages/db"
+    },
+    {
+      "path": "packages/auth"
+    },
+    {
+      "path": "packages/api"
+    },
+    {
+      "path": "apps/web"
+    }
+  ]
+}

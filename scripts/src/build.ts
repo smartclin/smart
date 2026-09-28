@@ -1,0 +1,229 @@
+import { readFile, writeFile } from "node:fs/promises";
+import { glob } from "glob";
+import {
+	type RegistryItem,
+	type RegistryItemFile,
+	type RegistryItemType,
+	registryItemSchema,
+} from "./schema";
+
+console.log("Building shadcn registry (v4 format)...");
+
+interface RegistryConfig {
+	path: string;
+	/** Only needed for registry:page and registry:file types */
+	targetFunction?: (path: string) => string;
+	type: RegistryItemType;
+}
+
+// Files to exclude from the core registry (they go in their own separate registries)
+const excludePatterns = [
+	"shadcn-component-definitions.ts",
+	"block-definitions.ts",
+	"react-email-component-definitions.ts",
+	"email-builder-utils.tsx",
+	"email-theme-config.ts",
+	"email-tailwind-theme-panel.tsx",
+];
+
+const registryConfigs: RegistryConfig[] = [
+	{
+		type: "registry:ui",
+		path: "./components/ui/ui-builder/**/*",
+	},
+	{
+		type: "registry:lib",
+		path: "./lib/ui-builder/**/*",
+	},
+	{
+		type: "registry:hook",
+		path: "./hooks/**/*",
+	},
+	{
+		type: "registry:page",
+		path: "./app/example/page.tsx",
+		targetFunction: (path: string) =>
+			path.replace("app/example", "app/ui-builder"),
+	},
+	{
+		type: "registry:ui",
+		path: "./components/ui/date-picker.tsx",
+	},
+];
+
+async function buildRegistry() {
+	const files: RegistryItemFile[] = [];
+
+	// Process all files from configs
+	for (const config of registryConfigs) {
+		const matchedFiles = await glob(config.path, { nodir: true });
+		for (const file of matchedFiles) {
+			// Skip files that should be excluded from core registry
+			if (excludePatterns.some((pattern) => file.includes(pattern))) {
+				console.log("Skipping file (in shadcn registry)", { file });
+				continue;
+			}
+
+			const content = await readFile(file, "utf-8");
+
+			// Normalize path by stripping leading "./"
+			const normalizedPath = file.replace(/^\.\//, "");
+
+			// Set target for all files to ensure correct placement on all platforms.
+			// The shadcn CLI's resolveNestedFilePath has a known bug on Windows (#8778)
+			// where backslash path separators cause files to be flattened to their
+			// base directory. Explicit targets bypass this logic entirely.
+			let targetPath: string | undefined;
+			if (config.targetFunction) {
+				targetPath = config.targetFunction(normalizedPath);
+			} else {
+				targetPath = normalizedPath;
+			}
+
+			console.log("Processing file", {
+				file: normalizedPath,
+				type: config.type,
+				target: targetPath,
+			});
+
+			files.push({
+				path: normalizedPath,
+				content,
+				type: config.type,
+				target: targetPath,
+			});
+		}
+	}
+
+	// Create the main registry item
+	const uiBuilderItem: RegistryItem = {
+		name: "ui-builder",
+		type: "registry:block",
+		title: "UI Builder",
+		description:
+			"A Figma-style visual editor for React applications that allows non-developers to compose pages using existing React components.",
+		registryDependencies: getRegistryDependencies(),
+		dependencies: getDependencies(),
+		devDependencies: getDevDependencies(),
+		files,
+		cssVars: {
+			theme: {
+				radius: "0.5rem",
+			},
+			light: {},
+			dark: {},
+		},
+	};
+
+	// Validate the registry item against the schema
+	const validationResult = registryItemSchema.safeParse(uiBuilderItem);
+	if (!validationResult.success) {
+		console.error(
+			"Registry item validation failed:",
+			validationResult.error
+		);
+		process.exit(1);
+	}
+
+	const registryFileName = "block-registry.json";
+
+	// Output as single registry item (not collection) for compatibility with `shadcn init <url>`
+	await writeFile(
+		`./registry/${registryFileName}`,
+		JSON.stringify(uiBuilderItem, null, 2)
+	);
+
+	console.log(`Registry (${registryFileName}) built successfully!`);
+	console.log(`  - ${files.length} files processed`);
+	console.log(`  - ${getDependencies().length} dependencies`);
+	console.log(
+		`  - ${getRegistryDependencies().length} registry dependencies`
+	);
+}
+
+function getDependencies(): string[] {
+	return [
+		"@use-gesture/react",
+		"react-error-boundary",
+		"react-hook-form",
+		"zod",
+		"zustand@4.5.5",
+		"zundo",
+		"immer",
+		"fast-deep-equal",
+		"react-markdown@^9.0.0",
+		"remark-gfm",
+		"remark-math",
+		"react-syntax-highlighter",
+		"he-tree-react",
+		"@dnd-kit/core",
+		"@dnd-kit/sortable",
+		"@dnd-kit/utilities",
+		"react-zoom-pan-pinch",
+		"object-hash",
+		"@floating-ui/react",
+		"react-resizable-panels",
+		"@tiptap/core@3.20.1",
+		"@tiptap/react@3.20.1",
+		"@tiptap/pm@3.20.1",
+		"@tiptap/starter-kit@3.20.1",
+		"@tiptap/extensions@3.20.1",
+		"@tiptap/markdown@3.20.1",
+		"@tiptap/extension-blockquote@3.20.1",
+		"@tiptap/extension-bold@3.20.1",
+		"@tiptap/extension-bubble-menu@3.20.1",
+		"@tiptap/extension-bullet-list@3.20.1",
+		"@tiptap/extension-code@3.20.1",
+		"@tiptap/extension-code-block@3.20.1",
+		"@tiptap/extension-code-block-lowlight@3.20.1",
+		"@tiptap/extension-color@3.20.1",
+		"@tiptap/extension-document@3.20.1",
+		"@tiptap/extension-dropcursor@3.20.1",
+		"@tiptap/extension-floating-menu@3.20.1",
+		"@tiptap/extension-gapcursor@3.20.1",
+		"@tiptap/extension-hard-break@3.20.1",
+		"@tiptap/extension-heading@3.20.1",
+		"@tiptap/extension-horizontal-rule@3.20.1",
+		"@tiptap/extension-image@3.20.1",
+		"@tiptap/extension-italic@3.20.1",
+		"@tiptap/extension-link@3.20.1",
+		"@tiptap/extension-list@3.20.1",
+		"@tiptap/extension-list-item@3.20.1",
+		"@tiptap/extension-list-keymap@3.20.1",
+		"@tiptap/extension-ordered-list@3.20.1",
+		"@tiptap/extension-paragraph@3.20.1",
+		"@tiptap/extension-strike@3.20.1",
+		"@tiptap/extension-table@3.20.1",
+		"@tiptap/extension-text@3.20.1",
+		"@tiptap/extension-text-style@3.20.1",
+		"@tiptap/extension-typography@3.20.1",
+		"@tiptap/extension-underline@3.20.1",
+	];
+}
+
+function getDevDependencies(): string[] {
+	return [
+		"@tailwindcss/typography",
+		"@types/react-syntax-highlighter",
+		"@types/object-hash",
+	];
+}
+
+function getRegistryDependencies(): string[] {
+	return [
+		"https://raw.githubusercontent.com/better-stack-ai/form-builder/refs/heads/main/registry/auto-form.json",
+		"https://raw.githubusercontent.com/olliethedev/shadcn-minimal-tiptap/refs/heads/feat/markdown/registry/block-registry.json",
+		"accordion",
+		"badge",
+		"calendar",
+		"card",
+		"command",
+		"context-menu",
+		"dropdown-menu",
+		"scroll-area",
+		"tabs",
+		"resizable",
+	];
+}
+
+buildRegistry();

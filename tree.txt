@@ -1,0 +1,1124 @@
+.
+├── AGENTS.md
+├── apps
+│   └── web
+│       ├── apps
+│       │   └── web
+│       │       └── src
+│       │           └── routes
+│       │               └── _auth
+│       │                   └── app
+│       │                       └── templates
+│       │                           └── $id
+│       ├── build.log
+│       ├── components.json
+│       ├── package.json
+│       ├── public
+│       │   ├── fonts
+│       │   │   ├── caveat-regular.woff2
+│       │   │   ├── fraunces-regular.woff2
+│       │   │   ├── geist-mono-regular.woff2
+│       │   │   └── inter-latin-regular.woff2
+│       │   ├── robots.txt
+│       │   ├── services
+│       │   │   ├── chronic-care.webp
+│       │   │   ├── developmental.webp
+│       │   │   ├── immunizations.webp
+│       │   │   ├── newborn.webp
+│       │   │   ├── sick-visits.webp
+│       │   │   └── well-child.webp
+│       │   └── services.jpeg
+│       ├── src
+│       │   ├── components
+│       │   │   ├── analytics
+│       │   │   │   ├── ClinicAnalytics.tsx
+│       │   │   │   ├── ClinicInsightsCard.tsx
+│       │   │   │   ├── MiniBarChart.tsx
+│       │   │   │   └── TrendBadge.tsx
+│       │   │   ├── appointment
+│       │   │   │   └── AppointmentCard.tsx
+│       │   │   ├── appointment-note-renderer.tsx
+│       │   │   ├── auth
+│       │   │   │   ├── additional-field.tsx
+│       │   │   │   ├── oidc-button.tsx
+│       │   │   │   ├── PasswordStrengthIndicator.tsx
+│       │   │   │   ├── PasswordValidation.tsx
+│       │   │   │   ├── sign-out.tsx
+│       │   │   │   └── types.ts
+│       │   │   ├── clinical
+│       │   │   │   ├── age-milestone-tracker.tsx
+│       │   │   │   ├── allergy-alert.tsx
+│       │   │   │   ├── appointment-booking-form.tsx
+│       │   │   │   ├── appointment-reminder.tsx
+│       │   │   │   ├── appointment-slot.tsx
+│       │   │   │   ├── clinic-stats-grid.tsx
+│       │   │   │   ├── developmental-milestones.tsx
+│       │   │   │   ├── diagnosis-code-selector.tsx
+│       │   │   │   ├── doctor-team-grid.tsx
+│       │   │   │   ├── emergency-banner.tsx
+│       │   │   │   ├── faq-accordion.tsx
+│       │   │   │   ├── feeding-guide-card.tsx
+│       │   │   │   ├── growth-chart-card.tsx
+│       │   │   │   ├── index.ts
+│       │   │   │   ├── insurance-info-card.tsx
+│       │   │   │   ├── medication-field.tsx
+│       │   │   │   ├── opening-hours-card.tsx
+│       │   │   │   ├── patient-card.tsx
+│       │   │   │   ├── patient-info-display.tsx
+│       │   │   │   ├── patient-intake-form.tsx
+│       │   │   │   ├── pediatrician-bio.tsx
+│       │   │   │   ├── prescription-card.tsx
+│       │   │   │   ├── service-card.tsx
+│       │   │   │   ├── testimonial-card.tsx
+│       │   │   │   ├── vaccination-schedule.tsx
+│       │   │   │   └── vital-signs-field.tsx
+│       │   │   ├── columns.tsx
+│       │   │   ├── dashboard
+│       │   │   │   ├── clinic-statistics.tsx
+│       │   │   │   ├── dashboard-shell.tsx
+│       │   │   │   ├── dropdown-language.tsx
+│       │   │   │   └── today-schedule-card.tsx
+│       │   │   ├── default-catch-boundary.tsx
+│       │   │   ├── default-not-found.tsx
+│       │   │   ├── forms
+│       │   │   │   ├── AppointmentForm.tsx
+│       │   │   │   ├── EncounterForm.tsx
+│       │   │   │   ├── ImmunizationForm.tsx
+│       │   │   │   ├── LabOrderForm.tsx
+│       │   │   │   ├── PatientForm.tsx
+│       │   │   │   ├── PrescriptionForm.tsx
+│       │   │   │   ├── StaffForm.tsx
+│       │   │   │   └── VitalsForm.tsx
+│       │   │   ├── growth
+│       │   │   │   ├── columns.tsx
+│       │   │   │   ├── constants.ts
+│       │   │   │   ├── growth-chart.tsx
+│       │   │   │   ├── growth-chart-with-tabs.tsx
+│       │   │   │   ├── growth-history-table.tsx
+│       │   │   │   ├── growth-measurements-table.tsx
+│       │   │   │   ├── index.ts
+│       │   │   │   ├── legend.tsx
+│       │   │   │   └── utils.ts
+│       │   │   ├── header.tsx
+│       │   │   ├── hero-section
+│       │   │   │   ├── clinic-profile.tsx
+│       │   │   │   ├── datatable-patient-activity.tsx
+│       │   │   │   ├── data.ts
+│       │   │   │   ├── dropdown-profile.tsx
+│       │   │   │   ├── greeting-word.tsx
+│       │   │   │   └── hero-section.tsx
+│       │   │   ├── landing
+│       │   │   │   └── services-showcase.tsx
+│       │   │   ├── layout
+│       │   │   │   ├── app-layout.tsx
+│       │   │   │   ├── AppShell.tsx
+│       │   │   │   ├── Sidebar.tsx
+│       │   │   │   └── types.ts
+│       │   │   ├── loader.tsx
+│       │   │   ├── logo.tsx
+│       │   │   ├── note
+│       │   │   │   ├── notes.tsx
+│       │   │   │   ├── note-template-editor.tsx
+│       │   │   │   └── note-template-list.tsx
+│       │   │   ├── patient
+│       │   │   │   ├── badge.tsx
+│       │   │   │   ├── edit-form.tsx
+│       │   │   │   └── patient-not.tsx
+│       │   │   ├── prescription
+│       │   │   │   ├── discontinue-dialog.tsx
+│       │   │   │   ├── patient-card.tsx
+│       │   │   │   ├── prescription-item-card.tsx
+│       │   │   │   └── primitives.tsx
+│       │   │   ├── privacy
+│       │   │   │   ├── data.ts
+│       │   │   │   ├── support-data.ts
+│       │   │   │   └── terms-data.ts
+│       │   │   ├── providers
+│       │   │   │   ├── auth-provider.tsx
+│       │   │   │   ├── Devtools.tsx
+│       │   │   │   ├── error-toaster.tsx
+│       │   │   │   ├── global-providers.tsx
+│       │   │   │   ├── staff-provider.tsx
+│       │   │   │   ├── store-client.ts
+│       │   │   │   └── StoreDevPanel.tsx
+│       │   │   ├── services
+│       │   │   │   └── ServicesPage.tsx
+│       │   │   ├── settings
+│       │   │   │   ├── account.tsx
+│       │   │   │   ├── clinic-profile.tsx
+│       │   │   │   ├── DatabaseSettings.tsx
+│       │   │   │   ├── data-management.tsx
+│       │   │   │   ├── integrations.tsx
+│       │   │   │   ├── notifications.tsx
+│       │   │   │   ├── practice.tsx
+│       │   │   │   ├── security.tsx
+│       │   │   │   ├── settings-page.tsx
+│       │   │   │   ├── settings-tabs.tsx
+│       │   │   │   └── staff-settings.tsx
+│       │   │   ├── sign-in-form.tsx
+│       │   │   ├── sign-out-button.tsx
+│       │   │   ├── sign-up-form.tsx
+│       │   │   ├── skeletons
+│       │   │   │   ├── detail-skeletons.tsx
+│       │   │   │   ├── edit-skeletons.tsx
+│       │   │   │   ├── index.ts
+│       │   │   │   ├── landing.tsx
+│       │   │   │   └── route-fallback.tsx
+│       │   │   ├── table
+│       │   │   │   ├── columns
+│       │   │   │   │   ├── appointment.tsx
+│       │   │   │   │   ├── encounter.tsx
+│       │   │   │   │   ├── growth.tsx
+│       │   │   │   │   ├── immunization.tsx
+│       │   │   │   │   ├── index.ts
+│       │   │   │   │   ├── labOrder.tsx
+│       │   │   │   │   ├── patient.tsx
+│       │   │   │   │   ├── prescription.tsx
+│       │   │   │   │   ├── registry.ts
+│       │   │   │   │   ├── shared
+│       │   │   │   │   │   ├── helpers.tsx
+│       │   │   │   │   │   ├── index.ts
+│       │   │   │   │   │   ├── options.ts
+│       │   │   │   │   │   ├── renderers.tsx
+│       │   │   │   │   │   └── variants.ts
+│       │   │   │   │   ├── staff.tsx
+│       │   │   │   │   └── vital.tsx
+│       │   │   │   └── modules
+│       │   │   │       ├── AppointmentsTable.tsx
+│       │   │   │       ├── EncountersTable.tsx
+│       │   │   │       ├── GrowthMeasurementTable.tsx
+│       │   │   │       ├── ImmunizationsTable.tsx
+│       │   │   │       ├── LabOrderTable.tsx
+│       │   │   │       ├── LabsTable.tsx
+│       │   │   │       ├── PatientsTable.tsx
+│       │   │   │       ├── PrescriptionTable.tsx
+│       │   │   │       ├── StaffTable.tsx
+│       │   │   │       ├── vitals
+│       │   │   │       │   ├── export-csv.ts
+│       │   │   │       │   └── VitalDetailsModal.tsx
+│       │   │   │       └── VitalsTable.tsx
+│       │   │   ├── templates
+│       │   │   │   └── template-page.tsx
+│       │   │   ├── theme-toggle.tsx
+│       │   │   └── user-menu.tsx
+│       │   ├── config
+│       │   │   ├── app.config.ts
+│       │   │   ├── clinic-info.ts
+│       │   │   └── prescription-config.ts
+│       │   ├── context.ts
+│       │   ├── functions
+│       │   │   ├── get-user.server.ts
+│       │   │   └── get-user.ts
+│       │   ├── hooks
+│       │   │   ├── auth.ts
+│       │   │   ├── query-keys.ts
+│       │   │   ├── query-options.ts
+│       │   │   ├── use-analytics.ts
+│       │   │   ├── use-appointments.ts
+│       │   │   ├── use-dashboard.ts
+│       │   │   ├── useDataMutation.ts
+│       │   │   ├── use-encounters.ts
+│       │   │   ├── use-extract-data.ts
+│       │   │   ├── use-growth.ts
+│       │   │   ├── useHotkeys.tsx
+│       │   │   ├── use-immunizations.ts
+│       │   │   ├── use-labs.ts
+│       │   │   ├── use-mutations.ts
+│       │   │   ├── use-note-templates.ts
+│       │   │   ├── use-optimistic-mutation.ts
+│       │   │   ├── use-patient-activity.ts
+│       │   │   ├── use-patient-dashboard.ts
+│       │   │   ├── use-patient-lookup.ts
+│       │   │   ├── use-patients.ts
+│       │   │   ├── use-pedia.tsx
+│       │   │   ├── use-prescriptions.ts
+│       │   │   ├── use-staff.tsx
+│       │   │   └── use-vitals.ts
+│       │   ├── index.css
+│       │   ├── lib
+│       │   │   ├── auth-client.ts
+│       │   │   ├── error.ts
+│       │   │   ├── orpc
+│       │   │   │   ├── client.ts
+│       │   │   │   ├── factory.ts
+│       │   │   │   ├── headers.server.ts
+│       │   │   │   ├── link.ts
+│       │   │   │   ├── query-client.ts
+│       │   │   │   ├── query-persister.ts
+│       │   │   │   ├── types.ts
+│       │   │   │   └── utils.ts
+│       │   │   ├── schema.ts
+│       │   │   ├── seo.ts
+│       │   │   ├── store
+│       │   │   │   ├── actions.ts
+│       │   │   │   ├── debug.ts
+│       │   │   │   ├── debug.tsx
+│       │   │   │   ├── effects.ts
+│       │   │   │   ├── index.ts
+│       │   │   │   ├── provider.tsx
+│       │   │   │   ├── selectors.ts
+│       │   │   │   ├── services.ts
+│       │   │   │   └── stores.ts
+│       │   │   └── ui-builder
+│       │   │       └── registry
+│       │   │           ├── block-definitions.ts
+│       │   │           ├── clinical-block-definitions.ts
+│       │   │           ├── clinical-component-definitions.ts
+│       │   │           ├── complex-component-definitions.ts
+│       │   │           ├── custom-component-definitions.ts
+│       │   │           ├── form-field-overrides.tsx
+│       │   │           ├── index.ts
+│       │   │           ├── primitive-component-definitions.ts
+│       │   │           └── shadcn-component-definitions.ts
+│       │   ├── middleware
+│       │   │   ├── auth.orpc.server.ts
+│       │   │   └── auth.ts
+│       │   ├── queries
+│       │   │   ├── appointments.ts
+│       │   │   ├── auth.ts
+│       │   │   ├── clinic..ts
+│       │   │   ├── dashboard.ts
+│       │   │   ├── encounters.ts
+│       │   │   ├── growth.ts
+│       │   │   ├── immunizations.ts
+│       │   │   ├── index.ts
+│       │   │   ├── labs.ts
+│       │   │   ├── patients.ts
+│       │   │   ├── prescriptions.ts
+│       │   │   ├── staff.ts
+│       │   │   ├── templates.ts
+│       │   │   ├── useInfinitePatients.ts
+│       │   │   └── vitals.ts
+│       │   ├── router.tsx
+│       │   ├── routes
+│       │   │   ├── api
+│       │   │   │   ├── auth
+│       │   │   │   │   └── $.ts
+│       │   │   │   └── rpc
+│       │   │   │       └── $.ts
+│       │   │   ├── _auth
+│       │   │   │   ├── app
+│       │   │   │   │   ├── analytics
+│       │   │   │   │   │   └── index.tsx
+│       │   │   │   │   ├── appointments
+│       │   │   │   │   │   ├── $id.edit.tsx
+│       │   │   │   │   │   ├── $id.tsx
+│       │   │   │   │   │   ├── index.tsx
+│       │   │   │   │   │   └── new.tsx
+│       │   │   │   │   ├── encounters
+│       │   │   │   │   │   ├── $id.edit.tsx
+│       │   │   │   │   │   ├── $id.tsx
+│       │   │   │   │   │   ├── index.tsx
+│       │   │   │   │   │   └── new.tsx
+│       │   │   │   │   ├── growth
+│       │   │   │   │   │   ├── index.tsx
+│       │   │   │   │   │   ├── new.tsx
+│       │   │   │   │   │   ├── record.tsx
+│       │   │   │   │   │   └── route.tsx
+│       │   │   │   │   ├── immunizations
+│       │   │   │   │   │   ├── $id.edit.tsx
+│       │   │   │   │   │   ├── $id.tsx
+│       │   │   │   │   │   ├── index.tsx
+│       │   │   │   │   │   └── new.tsx
+│       │   │   │   │   ├── index.tsx
+│       │   │   │   │   ├── labs
+│       │   │   │   │   │   ├── $labOrderId
+│       │   │   │   │   │   │   ├── edit.tsx
+│       │   │   │   │   │   │   └── index.tsx
+│       │   │   │   │   │   ├── index.tsx
+│       │   │   │   │   │   └── new.tsx
+│       │   │   │   │   ├── notes
+│       │   │   │   │   │   ├── $templetId.tsx
+│       │   │   │   │   │   ├── index.tsx
+│       │   │   │   │   │   └── new.tsx
+│       │   │   │   │   ├── patients
+│       │   │   │   │   │   ├── $id
+│       │   │   │   │   │   │   ├── edit.tsx
+│       │   │   │   │   │   │   ├── encounters.tsx
+│       │   │   │   │   │   │   ├── growth
+│       │   │   │   │   │   │   │   ├── chart.tsx
+│       │   │   │   │   │   │   │   ├── history.tsx
+│       │   │   │   │   │   │   │   ├── index.tsx
+│       │   │   │   │   │   │   │   ├── route.tsx
+│       │   │   │   │   │   │   │   └── tabs.tsx
+│       │   │   │   │   │   │   ├── immunizations.tsx
+│       │   │   │   │   │   │   ├── labs.tsx
+│       │   │   │   │   │   │   ├── prescriptions.tsx
+│       │   │   │   │   │   │   └── vitals.tsx
+│       │   │   │   │   │   ├── $id.tsx
+│       │   │   │   │   │   ├── index.tsx
+│       │   │   │   │   │   └── new.tsx
+│       │   │   │   │   ├── prescriptions
+│       │   │   │   │   │   ├── $id.edit.tsx
+│       │   │   │   │   │   ├── $id.tsx
+│       │   │   │   │   │   ├── index.tsx
+│       │   │   │   │   │   └── new.tsx
+│       │   │   │   │   ├── route.tsx
+│       │   │   │   │   ├── services
+│       │   │   │   │   │   └── index.tsx
+│       │   │   │   │   ├── settings
+│       │   │   │   │   │   ├── audit.tsx
+│       │   │   │   │   │   ├── billing.tsx
+│       │   │   │   │   │   ├── database.tsx
+│       │   │   │   │   │   ├── index.tsx
+│       │   │   │   │   │   ├── preferences.tsx
+│       │   │   │   │   │   └── route.tsx
+│       │   │   │   │   ├── staff
+│       │   │   │   │   │   ├── $staffId
+│       │   │   │   │   │   │   ├── edit.tsx
+│       │   │   │   │   │   │   └── index.tsx
+│       │   │   │   │   │   ├── index.tsx
+│       │   │   │   │   │   └── new.tsx
+│       │   │   │   │   ├── templates
+│       │   │   │   │   │   ├── $id
+│       │   │   │   │   │   │   ├── edit.tsx
+│       │   │   │   │   │   │   └── index.tsx
+│       │   │   │   │   │   ├── edit.tsx
+│       │   │   │   │   │   ├── index.tsx
+│       │   │   │   │   │   └── new.tsx
+│       │   │   │   │   ├── templates.tsx
+│       │   │   │   │   └── vitals
+│       │   │   │   │       ├── index.tsx
+│       │   │   │   │       └── new.tsx
+│       │   │   │   └── route.tsx
+│       │   │   ├── _guest
+│       │   │   │   ├── about.tsx
+│       │   │   │   ├── contact.tsx
+│       │   │   │   ├── credentials.tsx
+│       │   │   │   ├── privacy.tsx
+│       │   │   │   ├── support.tsx
+│       │   │   │   └── terms.tsx
+│       │   │   ├── index.tsx
+│       │   │   ├── login.tsx
+│       │   │   └── __root.tsx
+│       │   ├── routeTree.gen.ts
+│       │   ├── server.ts
+│       │   └── types
+│       │       └── insights.ts
+│       ├── stats.html
+│       ├── tree.txt
+│       ├── tsconfig.json
+│       ├── tsconfig.tsbuildinfo
+│       ├── tsr.config.json
+│       └── vite.config.ts
+├── biome.json
+├── bts.jsonc
+├── bunfig.toml
+├── bun.lock
+├── data
+│   ├── docs
+│   │   ├── BUILDER.md
+│   │   ├── draft.md
+│   │   ├── Drizzle.md
+│   │   ├── Drizzli_Bun.md
+│   │   ├── logger.md
+│   │   ├── orpc.md
+│   │   ├── ORPC.md
+│   │   ├── Tanstack
+│   │   │   ├── DB
+│   │   │   │   ├── DB.md
+│   │   │   │   ├── Error.md
+│   │   │   │   ├── Mutations.md
+│   │   │   │   └── Schemas.md
+│   │   │   ├── HotKeys.md
+│   │   │   └── Pacer.md
+│   │   ├── Tips.md
+│   │   ├── tree.txt
+│   │   ├── Ts7.md
+│   │   └── vtracer.md
+│   ├── lhfa-boys-zscore-expanded-tables.xlsx
+│   ├── lhfa-girls-zscore-expanded-tables.xlsx
+│   ├── reports
+│   │   ├── fresh-260925-0445.md
+│   │   ├── fresh-260927-0320-failed.md
+│   │   ├── fresh-260927-0322-failed.md
+│   │   ├── fresh-260927-0325-failed.md
+│   │   ├── fresh-260927-0329.md
+│   │   ├── fresh-260927-1614-2-failed.md
+│   │   └── fresh-260927-1614-failed.md
+│   ├── wfa-boys-zscore-expanded-tables.xlsx
+│   └── wfa-girls-zscore-expanded-tables.xlsx
+├── log.txt
+├── package.json
+├── packages
+│   ├── api
+│   │   ├── dist
+│   │   │   ├── config.d.ts
+│   │   │   ├── config.d.ts.map
+│   │   │   ├── context.d.ts
+│   │   │   ├── context.d.ts.map
+│   │   │   ├── index.d.ts
+│   │   │   ├── index.d.ts.map
+│   │   │   ├── keys.d.ts
+│   │   │   ├── keys.d.ts.map
+│   │   │   ├── logger
+│   │   │   │   ├── client.d.ts
+│   │   │   │   ├── client.d.ts.map
+│   │   │   │   ├── server.d.ts
+│   │   │   │   └── server.d.ts.map
+│   │   │   ├── repositories.d.ts
+│   │   │   ├── repositories.d.ts.map
+│   │   │   ├── routers
+│   │   │   │   ├── appointment.d.ts
+│   │   │   │   ├── appointment.d.ts.map
+│   │   │   │   ├── auth.d.ts
+│   │   │   │   ├── auth.d.ts.map
+│   │   │   │   ├── dashboard.d.ts
+│   │   │   │   ├── dashboard.d.ts.map
+│   │   │   │   ├── database.d.ts
+│   │   │   │   ├── database.d.ts.map
+│   │   │   │   ├── encounter.d.ts
+│   │   │   │   ├── encounter.d.ts.map
+│   │   │   │   ├── growth.d.ts
+│   │   │   │   ├── growth.d.ts.map
+│   │   │   │   ├── immunization.d.ts
+│   │   │   │   ├── immunization.d.ts.map
+│   │   │   │   ├── index.d.ts
+│   │   │   │   ├── index.d.ts.map
+│   │   │   │   ├── lab.d.ts
+│   │   │   │   ├── lab.d.ts.map
+│   │   │   │   ├── patient.d.ts
+│   │   │   │   ├── patient.d.ts.map
+│   │   │   │   ├── prescription.d.ts
+│   │   │   │   ├── prescription.d.ts.map
+│   │   │   │   ├── staff.d.ts
+│   │   │   │   ├── staff.d.ts.map
+│   │   │   │   ├── templates.d.ts
+│   │   │   │   ├── templates.d.ts.map
+│   │   │   │   ├── vitals.d.ts
+│   │   │   │   └── vitals.d.ts.map
+│   │   │   ├── schema.d.ts
+│   │   │   ├── schema.d.ts.map
+│   │   │   ├── serializer.d.ts
+│   │   │   ├── serializer.d.ts.map
+│   │   │   └── utils
+│   │   │       ├── error.d.ts
+│   │   │       ├── error.d.ts.map
+│   │   │       ├── index.d.ts
+│   │   │       ├── index.d.ts.map
+│   │   │       ├── power.d.ts
+│   │   │       ├── power.d.ts.map
+│   │   │       ├── timing.d.ts
+│   │   │       └── timing.d.ts.map
+│   │   ├── package.json
+│   │   ├── README.md
+│   │   ├── src
+│   │   │   ├── config.ts
+│   │   │   ├── context.ts
+│   │   │   ├── index.ts
+│   │   │   ├── keys.ts
+│   │   │   ├── logger
+│   │   │   │   ├── client.ts
+│   │   │   │   └── server.ts
+│   │   │   ├── repositories.ts
+│   │   │   ├── routers
+│   │   │   │   ├── appointment.ts
+│   │   │   │   ├── auth.ts
+│   │   │   │   ├── dashboard.ts
+│   │   │   │   ├── database.ts
+│   │   │   │   ├── encounter.ts
+│   │   │   │   ├── growth.ts
+│   │   │   │   ├── immunization.ts
+│   │   │   │   ├── index.ts
+│   │   │   │   ├── lab.ts
+│   │   │   │   ├── patient.ts
+│   │   │   │   ├── prescription.ts
+│   │   │   │   ├── staff.ts
+│   │   │   │   ├── templates.ts
+│   │   │   │   └── vitals.ts
+│   │   │   ├── schema.ts
+│   │   │   ├── serializer.ts
+│   │   │   └── utils
+│   │   │       ├── error.ts
+│   │   │       ├── index.ts
+│   │   │       ├── power.ts
+│   │   │       └── timing.ts
+│   │   └── tsconfig.json
+│   ├── auth
+│   │   ├── dist
+│   │   │   ├── index.d.ts
+│   │   │   ├── index.d.ts.map
+│   │   │   ├── roles.d.ts
+│   │   │   ├── roles.d.ts.map
+│   │   │   ├── utils.d.ts
+│   │   │   └── utils.d.ts.map
+│   │   ├── package.json
+│   │   ├── src
+│   │   │   ├── index.ts
+│   │   │   ├── roles.ts
+│   │   │   └── utils.ts
+│   │   └── tsconfig.json
+│   ├── config
+│   │   ├── package.json
+│   │   ├── react-library.json
+│   │   ├── tanstack.json
+│   │   └── tsconfig.base.json
+│   ├── db
+│   │   ├── dist
+│   │   │   ├── cache.d.ts
+│   │   │   ├── cache.d.ts.map
+│   │   │   ├── index.d.ts
+│   │   │   ├── index.d.ts.map
+│   │   │   ├── migrate.d.ts
+│   │   │   ├── migrate.d.ts.map
+│   │   │   ├── relations.d.ts
+│   │   │   ├── relations.d.ts.map
+│   │   │   ├── repositories
+│   │   │   │   ├── activity-repository.d.ts
+│   │   │   │   ├── activity-repository.d.ts.map
+│   │   │   │   ├── appointment.repository.d.ts
+│   │   │   │   ├── appointment.repository.d.ts.map
+│   │   │   │   ├── auditLog.repository.d.ts
+│   │   │   │   ├── auditLog.repository.d.ts.map
+│   │   │   │   ├── auth.repository.d.ts
+│   │   │   │   ├── auth.repository.d.ts.map
+│   │   │   │   ├── base.repository.d.ts
+│   │   │   │   ├── base.repository.d.ts.map
+│   │   │   │   ├── dashboard.repo.d.ts
+│   │   │   │   ├── dashboard.repo.d.ts.map
+│   │   │   │   ├── encounter.repository.d.ts
+│   │   │   │   ├── encounter.repository.d.ts.map
+│   │   │   │   ├── growth.repository.d.ts
+│   │   │   │   ├── growth.repository.d.ts.map
+│   │   │   │   ├── immunization.repository.d.ts
+│   │   │   │   ├── immunization.repository.d.ts.map
+│   │   │   │   ├── index.d.ts
+│   │   │   │   ├── index.d.ts.map
+│   │   │   │   ├── lab.repository.d.ts
+│   │   │   │   ├── lab.repository.d.ts.map
+│   │   │   │   ├── patient.repository.d.ts
+│   │   │   │   ├── patient.repository.d.ts.map
+│   │   │   │   ├── prescription.repository.d.ts
+│   │   │   │   ├── prescription.repository.d.ts.map
+│   │   │   │   ├── staff.repository.d.ts
+│   │   │   │   ├── staff.repository.d.ts.map
+│   │   │   │   ├── template.repository.d.ts
+│   │   │   │   ├── template.repository.d.ts.map
+│   │   │   │   ├── vital.repository.d.ts
+│   │   │   │   ├── vital.repository.d.ts.map
+│   │   │   │   ├── who.repository.d.ts
+│   │   │   │   └── who.repository.d.ts.map
+│   │   │   ├── reset.d.ts
+│   │   │   ├── reset.d.ts.map
+│   │   │   ├── schema
+│   │   │   │   ├── auth.d.ts
+│   │   │   │   ├── auth.d.ts.map
+│   │   │   │   ├── clinic.d.ts
+│   │   │   │   ├── clinic.d.ts.map
+│   │   │   │   ├── enums.d.ts
+│   │   │   │   ├── enums.d.ts.map
+│   │   │   │   ├── index.d.ts
+│   │   │   │   ├── index.d.ts.map
+│   │   │   │   ├── template.d.ts
+│   │   │   │   ├── template.d.ts.map
+│   │   │   │   ├── types.d.ts
+│   │   │   │   └── types.d.ts.map
+│   │   │   ├── server.d.ts
+│   │   │   ├── server.d.ts.map
+│   │   │   ├── vector
+│   │   │   │   ├── index.d.ts
+│   │   │   │   ├── index.d.ts.map
+│   │   │   │   ├── _internal.d.ts
+│   │   │   │   ├── _internal.d.ts.map
+│   │   │   │   ├── setup-vector-extension.d.ts
+│   │   │   │   ├── setup-vector-extension.d.ts.map
+│   │   │   │   ├── vector-check.d.ts
+│   │   │   │   └── vector-check.d.ts.map
+│   │   │   ├── zod
+│   │   │   │   ├── appointment.d.ts
+│   │   │   │   ├── appointment.d.ts.map
+│   │   │   │   ├── clinic.d.ts
+│   │   │   │   ├── clinic.d.ts.map
+│   │   │   │   ├── common.d.ts
+│   │   │   │   ├── common.d.ts.map
+│   │   │   │   ├── encounter.d.ts
+│   │   │   │   ├── encounter.d.ts.map
+│   │   │   │   ├── growth.d.ts
+│   │   │   │   ├── growth.d.ts.map
+│   │   │   │   ├── immunization.d.ts
+│   │   │   │   ├── immunization.d.ts.map
+│   │   │   │   ├── lab.d.ts
+│   │   │   │   ├── lab.d.ts.map
+│   │   │   │   ├── medicalRecord.d.ts
+│   │   │   │   ├── medicalRecord.d.ts.map
+│   │   │   │   ├── patient.d.ts
+│   │   │   │   ├── patient.d.ts.map
+│   │   │   │   ├── prescriptions.d.ts
+│   │   │   │   ├── prescriptions.d.ts.map
+│   │   │   │   ├── staff.d.ts
+│   │   │   │   ├── staff.d.ts.map
+│   │   │   │   ├── template.d.ts
+│   │   │   │   ├── template.d.ts.map
+│   │   │   │   ├── vitals.d.ts
+│   │   │   │   └── vitals.d.ts.map
+│   │   │   ├── zod.d.ts
+│   │   │   └── zod.d.ts.map
+│   │   ├── drizzle.config.ts
+│   │   ├── package.json
+│   │   ├── src
+│   │   │   ├── cache.ts
+│   │   │   ├── index.ts
+│   │   │   ├── migrate.ts
+│   │   │   ├── migrations
+│   │   │   │   └── 20260927131321_secret_franklin_richards
+│   │   │   │       ├── migration.sql
+│   │   │   │       └── snapshot.json
+│   │   │   ├── relations.ts
+│   │   │   ├── repositories
+│   │   │   │   ├── activity-repository.ts
+│   │   │   │   ├── appointment.repository.ts
+│   │   │   │   ├── auditLog.repository.ts
+│   │   │   │   ├── auth.repository.ts
+│   │   │   │   ├── base.repository.ts
+│   │   │   │   ├── dashboard.repo.ts
+│   │   │   │   ├── encounter.repository.ts
+│   │   │   │   ├── growth.repository.ts
+│   │   │   │   ├── immunization.repository.ts
+│   │   │   │   ├── index.ts
+│   │   │   │   ├── lab.repository.ts
+│   │   │   │   ├── patient.repository.ts
+│   │   │   │   ├── prescription.repository.ts
+│   │   │   │   ├── staff.repository.ts
+│   │   │   │   ├── template.repository.ts
+│   │   │   │   ├── vital.repository.ts
+│   │   │   │   └── who.repository.ts
+│   │   │   ├── reset.ts
+│   │   │   ├── schema
+│   │   │   │   ├── auth.ts
+│   │   │   │   ├── clinic.ts
+│   │   │   │   ├── enums.ts
+│   │   │   │   ├── index.ts
+│   │   │   │   ├── template.ts
+│   │   │   │   └── types.ts
+│   │   │   ├── server.ts
+│   │   │   ├── utils
+│   │   │   ├── vector
+│   │   │   │   ├── index.ts
+│   │   │   │   ├── _internal.ts
+│   │   │   │   ├── setup-vector-extension.ts
+│   │   │   │   └── vector-check.ts
+│   │   │   ├── zod
+│   │   │   │   ├── appointment.ts
+│   │   │   │   ├── clinic.ts
+│   │   │   │   ├── common.ts
+│   │   │   │   ├── encounter.ts
+│   │   │   │   ├── growth.ts
+│   │   │   │   ├── immunization.ts
+│   │   │   │   ├── lab.ts
+│   │   │   │   ├── medicalRecord.ts
+│   │   │   │   ├── patient.ts
+│   │   │   │   ├── prescriptions.ts
+│   │   │   │   ├── staff.ts
+│   │   │   │   ├── template.ts
+│   │   │   │   └── vitals.ts
+│   │   │   └── zod.ts
+│   │   └── tsconfig.json
+│   ├── env
+│   │   ├── package.json
+│   │   ├── src
+│   │   │   ├── native.ts
+│   │   │   ├── server.ts
+│   │   │   └── web.ts
+│   │   └── tsconfig.json
+│   ├── ui
+│   │   ├── components.json
+│   │   ├── package.json
+│   │   ├── postcss.config.mjs
+│   │   ├── src
+│   │   │   ├── assets
+│   │   │   │   └── svg
+│   │   │   │       └── logo.tsx
+│   │   │   ├── components
+│   │   │   │   ├── accordion.tsx
+│   │   │   │   ├── alert-dialog.tsx
+│   │   │   │   ├── alert.tsx
+│   │   │   │   ├── aspect-ratio.tsx
+│   │   │   │   ├── attachment.tsx
+│   │   │   │   ├── auto-form
+│   │   │   │   │   ├── common
+│   │   │   │   │   │   ├── label.tsx
+│   │   │   │   │   │   └── tooltip.tsx
+│   │   │   │   │   ├── config.ts
+│   │   │   │   │   ├── dependencies.ts
+│   │   │   │   │   ├── fields
+│   │   │   │   │   │   ├── array.tsx
+│   │   │   │   │   │   ├── checkbox.tsx
+│   │   │   │   │   │   ├── date.tsx
+│   │   │   │   │   │   ├── enum.tsx
+│   │   │   │   │   │   ├── input.tsx
+│   │   │   │   │   │   ├── number.tsx
+│   │   │   │   │   │   ├── object.tsx
+│   │   │   │   │   │   ├── radio-group.tsx
+│   │   │   │   │   │   ├── switch.tsx
+│   │   │   │   │   │   └── textarea.tsx
+│   │   │   │   │   ├── helpers.tsx
+│   │   │   │   │   ├── index.tsx
+│   │   │   │   │   ├── shared-form-types.ts
+│   │   │   │   │   └── types.ts
+│   │   │   │   ├── avatar.tsx
+│   │   │   │   ├── badge.tsx
+│   │   │   │   ├── breadcrumb.tsx
+│   │   │   │   ├── bubble.tsx
+│   │   │   │   ├── button-group.tsx
+│   │   │   │   ├── button.tsx
+│   │   │   │   ├── calendar.tsx
+│   │   │   │   ├── card.tsx
+│   │   │   │   ├── carousel.tsx
+│   │   │   │   ├── chart-demos.tsx
+│   │   │   │   ├── chart.tsx
+│   │   │   │   ├── checkbox.tsx
+│   │   │   │   ├── collapsible.tsx
+│   │   │   │   ├── combobox.tsx
+│   │   │   │   ├── command.tsx
+│   │   │   │   ├── context-menu.tsx
+│   │   │   │   ├── date-picker.tsx
+│   │   │   │   ├── dialog.tsx
+│   │   │   │   ├── direction.tsx
+│   │   │   │   ├── drawer.tsx
+│   │   │   │   ├── dropdown-menu.tsx
+│   │   │   │   ├── empty.tsx
+│   │   │   │   ├── faceted.tsx
+│   │   │   │   ├── field.tsx
+│   │   │   │   ├── file-uploader.tsx
+│   │   │   │   ├── form.tsx
+│   │   │   │   ├── hover-card.tsx
+│   │   │   │   ├── icons.tsx
+│   │   │   │   ├── id-card.tsx
+│   │   │   │   ├── info-row.tsx
+│   │   │   │   ├── input-group.tsx
+│   │   │   │   ├── input-otp.tsx
+│   │   │   │   ├── input.tsx
+│   │   │   │   ├── item.tsx
+│   │   │   │   ├── kbd.tsx
+│   │   │   │   ├── label.tsx
+│   │   │   │   ├── lanyard-glb-data.ts
+│   │   │   │   ├── marker.tsx
+│   │   │   │   ├── marquee.tsx
+│   │   │   │   ├── menubar.tsx
+│   │   │   │   ├── message-scroller.tsx
+│   │   │   │   ├── message.tsx
+│   │   │   │   ├── minimal-tiptap
+│   │   │   │   │   ├── components
+│   │   │   │   │   │   ├── bubble-menu
+│   │   │   │   │   │   │   └── link-bubble-menu.tsx
+│   │   │   │   │   │   ├── image
+│   │   │   │   │   │   │   ├── image-edit-block.tsx
+│   │   │   │   │   │   │   └── image-edit-dialog.tsx
+│   │   │   │   │   │   ├── link
+│   │   │   │   │   │   │   ├── link-edit-block.tsx
+│   │   │   │   │   │   │   ├── link-edit-popover.tsx
+│   │   │   │   │   │   │   └── link-popover-block.tsx
+│   │   │   │   │   │   ├── measured-container.tsx
+│   │   │   │   │   │   ├── section
+│   │   │   │   │   │   │   ├── five.tsx
+│   │   │   │   │   │   │   ├── four.tsx
+│   │   │   │   │   │   │   ├── one.tsx
+│   │   │   │   │   │   │   ├── three.tsx
+│   │   │   │   │   │   │   └── two.tsx
+│   │   │   │   │   │   ├── shortcut-key.tsx
+│   │   │   │   │   │   ├── spinner.tsx
+│   │   │   │   │   │   ├── toolbar-button.tsx
+│   │   │   │   │   │   └── toolbar-section.tsx
+│   │   │   │   │   ├── extensions
+│   │   │   │   │   │   ├── code-block-lowlight
+│   │   │   │   │   │   │   ├── code-block-lowlight.ts
+│   │   │   │   │   │   │   └── index.ts
+│   │   │   │   │   │   ├── color
+│   │   │   │   │   │   │   ├── color.ts
+│   │   │   │   │   │   │   └── index.ts
+│   │   │   │   │   │   ├── file-handler
+│   │   │   │   │   │   │   └── index.ts
+│   │   │   │   │   │   ├── horizontal-rule
+│   │   │   │   │   │   │   ├── horizontal-rule.ts
+│   │   │   │   │   │   │   └── index.ts
+│   │   │   │   │   │   ├── image
+│   │   │   │   │   │   │   ├── components
+│   │   │   │   │   │   │   │   ├── image-actions.tsx
+│   │   │   │   │   │   │   │   ├── image-overlay.tsx
+│   │   │   │   │   │   │   │   ├── image-view-block.tsx
+│   │   │   │   │   │   │   │   └── resize-handle.tsx
+│   │   │   │   │   │   │   ├── hooks
+│   │   │   │   │   │   │   │   ├── use-drag-resize.ts
+│   │   │   │   │   │   │   │   └── use-image-actions.ts
+│   │   │   │   │   │   │   ├── image.ts
+│   │   │   │   │   │   │   └── index.ts
+│   │   │   │   │   │   ├── index.ts
+│   │   │   │   │   │   ├── markdown-paste
+│   │   │   │   │   │   │   ├── index.ts
+│   │   │   │   │   │   │   └── markdown-paste.ts
+│   │   │   │   │   │   ├── reset-marks-on-enter
+│   │   │   │   │   │   │   ├── index.ts
+│   │   │   │   │   │   │   └── reset-marks-on-enter.ts
+│   │   │   │   │   │   └── unset-all-marks
+│   │   │   │   │   │       ├── index.ts
+│   │   │   │   │   │       └── unset-all-marks.ts
+│   │   │   │   │   ├── hooks
+│   │   │   │   │   │   ├── use-container-size.ts
+│   │   │   │   │   │   ├── use-minimal-tiptap.ts
+│   │   │   │   │   │   ├── use-theme.ts
+│   │   │   │   │   │   ├── use-throttle.ts
+│   │   │   │   │   │   └── use-tiptap-editor.ts
+│   │   │   │   │   ├── index.ts
+│   │   │   │   │   ├── minimal-tiptap.tsx
+│   │   │   │   │   ├── styles
+│   │   │   │   │   │   ├── index.css
+│   │   │   │   │   │   └── partials
+│   │   │   │   │   │       ├── code.css
+│   │   │   │   │   │       ├── lists.css
+│   │   │   │   │   │       ├── placeholder.css
+│   │   │   │   │   │       ├── typography.css
+│   │   │   │   │   │       └── zoom.css
+│   │   │   │   │   ├── types.ts
+│   │   │   │   │   └── utils.ts
+│   │   │   │   ├── native-select.tsx
+│   │   │   │   ├── navigation-menu.tsx
+│   │   │   │   ├── pagination.tsx
+│   │   │   │   ├── popover.tsx
+│   │   │   │   ├── progress.tsx
+│   │   │   │   ├── questionnaire.tsx
+│   │   │   │   ├── radio-group.tsx
+│   │   │   │   ├── resizable.tsx
+│   │   │   │   ├── scroll-area.tsx
+│   │   │   │   ├── Section.tsx
+│   │   │   │   ├── select.tsx
+│   │   │   │   ├── separator.tsx
+│   │   │   │   ├── shadcn-studio
+│   │   │   │   │   ├── blocks
+│   │   │   │   │   │   ├── hero-section-01
+│   │   │   │   │   │   │   ├── header.tsx
+│   │   │   │   │   │   │   └── hero-section-01.tsx
+│   │   │   │   │   │   └── statistics-card-01.tsx
+│   │   │   │   │   └── logo.tsx
+│   │   │   │   ├── sheet.tsx
+│   │   │   │   ├── sidebar.tsx
+│   │   │   │   ├── skeleton.tsx
+│   │   │   │   ├── slider.tsx
+│   │   │   │   ├── sonner.tsx
+│   │   │   │   ├── sortable.tsx
+│   │   │   │   ├── spinner.tsx
+│   │   │   │   ├── switch.tsx
+│   │   │   │   ├── table
+│   │   │   │   │   ├── components
+│   │   │   │   │   │   ├── cell-components.tsx
+│   │   │   │   │   │   ├── data-table-column-header.tsx
+│   │   │   │   │   │   ├── data-table-empty-state.tsx
+│   │   │   │   │   │   ├── data-table-filter-list.tsx
+│   │   │   │   │   │   ├── data-table-loading.tsx
+│   │   │   │   │   │   ├── data-table-pagination.tsx
+│   │   │   │   │   │   ├── data-table-sort-list.tsx
+│   │   │   │   │   │   ├── data-table-toolbar.tsx
+│   │   │   │   │   │   ├── data-table.tsx
+│   │   │   │   │   │   ├── data-table-view-options.tsx
+│   │   │   │   │   │   └── header-components.tsx
+│   │   │   │   │   ├── features.ts
+│   │   │   │   │   ├── filters.ts
+│   │   │   │   │   ├── index.ts
+│   │   │   │   │   ├── shared
+│   │   │   │   │   │   ├── FilterBar.tsx
+│   │   │   │   │   │   ├── index.ts
+│   │   │   │   │   │   ├── TableEmptyState.tsx
+│   │   │   │   │   │   ├── TableErrorState.tsx
+│   │   │   │   │   │   ├── TablePageHeader.tsx
+│   │   │   │   │   │   └── TablePaginationFooter.tsx
+│   │   │   │   │   ├── table-context.ts
+│   │   │   │   │   └── table.ts
+│   │   │   │   ├── table.tsx
+│   │   │   │   ├── tabs.tsx
+│   │   │   │   ├── tanform
+│   │   │   │   │   ├── core
+│   │   │   │   │   │   ├── context.tsx
+│   │   │   │   │   │   ├── registry.tsx
+│   │   │   │   │   │   ├── select.ts
+│   │   │   │   │   │   └── types.ts
+│   │   │   │   │   ├── fields
+│   │   │   │   │   │   ├── checkbox-field.tsx
+│   │   │   │   │   │   ├── color-field.tsx
+│   │   │   │   │   │   ├── date-field.tsx
+│   │   │   │   │   │   ├── file-upload-field.tsx
+│   │   │   │   │   │   ├── index.ts
+│   │   │   │   │   │   ├── radio-group-field.tsx
+│   │   │   │   │   │   ├── select-field.tsx
+│   │   │   │   │   │   ├── slider-field.tsx
+│   │   │   │   │   │   ├── switch-field.tsx
+│   │   │   │   │   │   ├── textarea-field.tsx
+│   │   │   │   │   │   └── text-field.tsx
+│   │   │   │   │   ├── index.ts
+│   │   │   │   │   ├── layout
+│   │   │   │   │   │   ├── FormActions.tsx
+│   │   │   │   │   │   ├── FormPageLayout.tsx
+│   │   │   │   │   │   └── FormSection.tsx
+│   │   │   │   │   └── widgets
+│   │   │   │   │       └── TimeSelector.tsx
+│   │   │   │   ├── textarea.tsx
+│   │   │   │   ├── theme-provider.tsx
+│   │   │   │   ├── toast.tsx
+│   │   │   │   ├── toggle-group.tsx
+│   │   │   │   ├── toggle.tsx
+│   │   │   │   ├── tooltip.tsx
+│   │   │   │   └── ui-builder
+│   │   │   │       ├── components
+│   │   │   │       │   ├── codeblock.tsx
+│   │   │   │       │   ├── code-panel.tsx
+│   │   │   │       │   ├── flexbox.tsx
+│   │   │   │       │   ├── grid.tsx
+│   │   │   │       │   ├── icon.tsx
+│   │   │   │       │   └── markdown.tsx
+│   │   │   │       ├── index.tsx
+│   │   │   │       ├── internal
+│   │   │   │       │   ├── canvas
+│   │   │   │       │   │   ├── auto-frame.tsx
+│   │   │   │       │   │   └── resizable-wrapper.tsx
+│   │   │   │       │   ├── components
+│   │   │   │       │   │   ├── add-component-popover.tsx
+│   │   │   │       │   │   ├── dev-profiler.tsx
+│   │   │   │       │   │   ├── divider-control.tsx
+│   │   │   │       │   │   ├── element-selector.tsx
+│   │   │   │       │   │   ├── error-fallback.tsx
+│   │   │   │       │   │   ├── layer-context-menu-portal.tsx
+│   │   │   │       │   │   ├── layer-context-menu.tsx
+│   │   │   │       │   │   ├── layer-menu.tsx
+│   │   │   │       │   │   ├── multi-select.tsx
+│   │   │   │       │   │   ├── name-edit.tsx
+│   │   │   │       │   │   ├── nav.tsx
+│   │   │   │       │   │   └── tree-row-node.tsx
+│   │   │   │       │   ├── config-panel.tsx
+│   │   │   │       │   ├── dnd
+│   │   │   │       │   │   ├── draggable-new-component.tsx
+│   │   │   │       │   │   ├── drag-handle.tsx
+│   │   │   │       │   │   └── drop-zone.tsx
+│   │   │   │       │   ├── editor-panel.tsx
+│   │   │   │       │   ├── form-fields
+│   │   │   │       │   │   ├── children-searchable-select.tsx
+│   │   │   │       │   │   ├── classname-control
+│   │   │   │       │   │   │   ├── breakpoint-classname-control.tsx
+│   │   │   │       │   │   │   ├── classname-group-control.tsx
+│   │   │   │       │   │   │   ├── classname-item-control.tsx
+│   │   │   │       │   │   │   ├── classname-multiselect.tsx
+│   │   │   │       │   │   │   ├── config.tsx
+│   │   │   │       │   │   │   ├── helpers.tsx
+│   │   │   │       │   │   │   ├── icons.tsx
+│   │   │   │       │   │   │   ├── index.tsx
+│   │   │   │       │   │   │   ├── theme-aware-config.tsx
+│   │   │   │       │   │   │   ├── theme-aware-dropdown-option.tsx
+│   │   │   │       │   │   │   └── toggle-group.tsx
+│   │   │   │       │   │   └── iconname-field.tsx
+│   │   │   │       │   ├── layers-panel.tsx
+│   │   │   │       │   ├── props-panel.tsx
+│   │   │   │       │   ├── tailwind-theme-panel.tsx
+│   │   │   │       │   ├── utils
+│   │   │   │       │   │   ├── base-colors.ts
+│   │   │   │       │   │   ├── render-utils.tsx
+│   │   │   │       │   │   ├── tailwind-classes.ts
+│   │   │   │       │   │   └── templates.ts
+│   │   │   │       │   └── variables-panel.tsx
+│   │   │   │       ├── layer-renderer.tsx
+│   │   │   │       ├── server-layer-renderer.tsx
+│   │   │   │       └── types.ts
+│   │   │   ├── hooks
+│   │   │   │   ├── use-callback-ref.tsx
+│   │   │   │   ├── use-controllable-state.tsx
+│   │   │   │   ├── use-copy-to-clipboard.tsx
+│   │   │   │   ├── use-data-table-row-virtualizer.ts
+│   │   │   │   ├── use-debounced-callback.ts
+│   │   │   │   ├── use-debounce.ts
+│   │   │   │   ├── use-debounce.tsx
+│   │   │   │   ├── use-is-client.hook.ts
+│   │   │   │   ├── use-keyboard-shortcuts.tsx
+│   │   │   │   ├── use-list-table-state.ts
+│   │   │   │   ├── use-mobile.ts
+│   │   │   │   ├── use-mobile.tsx
+│   │   │   │   ├── use-scroll.hook.ts
+│   │   │   │   └── use-store.ts
+│   │   │   ├── lib
+│   │   │   │   ├── compose-refs.ts
+│   │   │   │   ├── ui-builder
+│   │   │   │   │   ├── context
+│   │   │   │   │   │   ├── auto-scroll-constants.ts
+│   │   │   │   │   │   ├── collision-debug.ts
+│   │   │   │   │   │   ├── dnd-context-colission-utils.ts
+│   │   │   │   │   │   ├── dnd-contexts.tsx
+│   │   │   │   │   │   ├── dnd-context.tsx
+│   │   │   │   │   │   ├── dnd-utils.tsx
+│   │   │   │   │   │   └── drag-overlay.tsx
+│   │   │   │   │   ├── hooks
+│   │   │   │   │   │   ├── use-auto-scroll.ts
+│   │   │   │   │   │   ├── use-dnd-event-handlers.ts
+│   │   │   │   │   │   ├── use-dnd-sensors.ts
+│   │   │   │   │   │   ├── use-drop-validation.ts
+│   │   │   │   │   │   ├── use-keyboard-shortcuts-dnd.ts
+│   │   │   │   │   │   └── use-layer-actions.ts
+│   │   │   │   │   ├── shortcuts
+│   │   │   │   │   │   └── shortcut-registry.ts
+│   │   │   │   │   ├── store
+│   │   │   │   │   │   ├── editor-store.ts
+│   │   │   │   │   │   ├── editor-utils.ts
+│   │   │   │   │   │   ├── layer-store.ts
+│   │   │   │   │   │   ├── layer-utils.ts
+│   │   │   │   │   │   └── schema-utils.ts
+│   │   │   │   │   └── utils
+│   │   │   │   │       ├── get-scroll-parent.tsx
+│   │   │   │   │       ├── paste-validation.ts
+│   │   │   │   │       └── variable-resolver.ts
+│   │   │   │   └── utils.ts
+│   │   │   ├── styles
+│   │   │   │   ├── animations.css
+│   │   │   │   ├── base.css
+│   │   │   │   ├── components.css
+│   │   │   │   ├── dark.css
+│   │   │   │   ├── globals.css
+│   │   │   │   ├── performance.css
+│   │   │   │   ├── scrollbar.css
+│   │   │   │   ├── theme.css
+│   │   │   │   ├── typography.css
+│   │   │   │   └── utilities.css
+│   │   │   └── types
+│   │   │       ├── globals.d.ts
+│   │   │       ├── percentiles.ts
+│   │   │       └── table.ts
+│   │   ├── tsconfig.json
+│   │   └── tsconfig.tsbuildinfo
+│   └── utils
+│       ├── package.json
+│       ├── README.md
+│       ├── src
+│       │   ├── data-extract.ts
+│       │   ├── date.ts
+│       │   ├── format.ts
+│       │   ├── growth-utils.ts
+│       │   ├── id.ts
+│       │   ├── index.ts
+│       │   ├── patient.ts
+│       │   ├── pedia
+│       │   │   ├── age.ts
+│       │   │   ├── assessment.ts
+│       │   │   ├── formulary.ts
+│       │   │   ├── index.ts
+│       │   │   ├── internal.ts
+│       │   │   ├── types.ts
+│       │   │   └── vitals.ts
+│       │   ├── vaccineMilestones.ts
+│       │   └── who.ts
+│       └── tsconfig.json
+├── README.md
+├── scripts
+│   ├── package.json
+│   ├── README.md
+│   ├── src
+│   │   ├── admin.ts
+│   │   ├── build-shadcn-registry.ts
+│   │   ├── build.ts
+│   │   ├── fresh.ts
+│   │   ├── index.ts
+│   │   ├── report.ts
+│   │   ├── schema.ts
+│   │   ├── seed.ts
+│   │   ├── seed-who.ts
+│   │   ├── sync-shadcn-components.ts
+│   │   └── test-registry.sh
+│   └── tsconfig.json
+├── tree.txt
+├── tsconfig.json
+├── tsconfig.tsbuildinfo
+└── turbo.json
+
+175 directories, 947 files

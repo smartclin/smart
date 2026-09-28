@@ -1,0 +1,19 @@
+{
+  "extends": "@smart/config/react-library.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "lib": ["ES2024"],
+    "types": ["node"],
+    "paths": {
+      "@smart/ui/*": ["./src/*"],
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "../../apps/web/src/hooks/useDataMutation.ts",
+    "../../apps/web/src/hooks/use-extract-data.ts"
+  ],
+  "exclude": ["node_modules", "dist"]
+}

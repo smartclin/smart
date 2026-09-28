@@ -1,0 +1,39 @@
+{
+  "name": "@smart/db",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./*": "./src/*.ts",
+    "./repositories": "./src/repositories/index.ts",
+    "./schema": "./src/schema/index.ts",
+    "./utils": "./src/utils/index.ts"
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "check": "biome check --write",
+    "check-types": "tsc -b",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio"
+  },
+  "dependencies": {
+    "@better-auth/utils": "0.5.0",
+    "@faker-js/faker": "10.6.0",
+    "@smart/utils": "workspace:*",
+    "better-auth": "catalog:",
+    "date-fns": "4.4.0",
+    "dotenv": "catalog:",
+    "drizzle-orm": "catalog:",
+    "otpauth": "9.5.2",
+    "postgres": "3.4.9",
+    "xlsx": "0.18.5",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@smart/config": "workspace:*",
+    "@smart/env": "workspace:*",
+    "drizzle-kit": "catalog:",
+    "typescript": "catalog:"
+  }
+}

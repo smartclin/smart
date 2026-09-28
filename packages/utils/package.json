@@ -1,0 +1,25 @@
+{
+  "name": "@smart/utils",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./*": "./src/*.ts"
+  },
+  "module": "src/index.ts",
+  "scripts": {
+    "check": "biome check --write"
+  },
+  "dependencies": {
+    "date-fns": "4.4.0",
+    "react": "catalog:",
+    "react-dom": "catalog:"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:"
+  },
+  "peerDependencies": {
+    "typescript": "^7"
+  }
+}

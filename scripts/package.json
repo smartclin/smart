@@ -1,0 +1,44 @@
+{
+  "name": "scripts",
+  "private": true,
+  "type": "module",
+  "module": "src/index.ts",
+  "scripts": {
+    "db:admin-only": "bun --env-file=../apps/web/.env src/fresh.ts --force --only=seed-admin",
+    "db:reset": "bun --env-file=../apps/web/.env src/fresh.ts --force --skip-who --skip-app",
+    "db:verify": "bun --env-file=../apps/web/.env src/fresh.ts --from=verify --force",
+    "fresh": "bun --env-file=../apps/web/.env src/fresh.ts",
+    "fresh:ci": "bun --env-file=../apps/web/.env src/fresh.ts --force --no-report",
+    "fresh:dry": "bun --env-file=../apps/web/.env src/fresh.ts --dry-run",
+    "fresh:paths": "bun src/fresh.ts --print-paths",
+    "seed": "bun --env-file=../apps/web/.env src/seed.ts",
+    "seed:admin": "bun --env-file=../apps/web/.env src/admin.ts",
+    "seed:app": "bun --env-file=../apps/web/.env src/seed.ts",
+    "seed:app:skip": "bun --env-file=../apps/web/.env src/seed.ts --skip-admin --skip-who",
+    "seed:who": "bun --env-file=../apps/web/.env src/seed-who.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@faker-js/faker": "catalog:",
+    "@smart/auth": "workspace:*",
+    "@smart/db": "workspace:*",
+    "@smart/env": "workspace:*",
+    "@smart/utils": "workspace:*",
+    "dotenv": "catalog:",
+    "drizzle-orm": "catalog:",
+    "xlsx": "0.18.5",
+
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@smart/config": "workspace:*",
+    "@types/bun": "latest",
+    "@types/node": "26.6.3",
+    "drizzle-kit": "catalog:",
+    "glob": "13.0.6",
+    "typescript": "catalog:"
+  },
+  "peerDependencies": {
+    "typescript": "catalog:"
+  }
+}

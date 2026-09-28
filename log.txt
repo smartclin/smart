@@ -1,0 +1,32 @@
+🌱 Seeding application demo data...
+{
+  query: "select \"d0\".\"id\" as \"id\", \"d0\".\"name\" as \"name\", \"d0\".\"address\" as \"address\", \"d0\".\"phone\" as \"phone\", \"d0\".\"email\" as \"email\", \"d0\".\"website\" as \"website\", \"d0\".\"logo\" as \"logo\", \"d0\".\"timezone\" as \"timezone\", \"d0\".\"currency\" as \"currency\", \"d0\".\"active\" as \"active\", \"d0\".\"settings\" as \"settings\", \"d0\".\"created_at\" as \"createdAt\", \"d0\".\"updated_at\" as \"updatedAt\" from \"clinics\" as \"d0\" where \"d0\".\"id\" = $1 limit $2",
+  params: [ "clinic-main", 1 ],
+} 🐘 drizzle query
+pglite: found DB, resuming
+
+PostgreSQL stand-alone backend 18.3
+runQuery
+      SELECT b.oid, b.typarray
+      FROM pg_catalog.pg_type a
+      LEFT JOIN pg_catalog.pg_type b ON b.oid = a.typelem
+      WHERE a.typcategory = 'A'
+      GROUP BY b.oid, b.typarray
+      ORDacER BY b.oid
+     [] undefined
+runQuery select "d0"."id" as "id", "d0"."name" as "name", "d0"."address" as "address", "d0"."phone" as "phone", "d0"."email" as "email", "d0"."website" as "website", "d0"."logo" as "logo", "d0"."timezone" as "timezone", "d0"."currency" as "currency", "d0"."active" as "active", "d0"."settings" as "settings", "d0"."created_at" as "createdAt", "d0"."updated_at" as "updatedAt" from "clinics" as "d0" where "d0"."id" = $1 limit $2 [
+  "clinic-main", 1
+] {
+  rowMode: "array",
+  parsers: {
+    "1082": [Function],
+    "1114": [Function],
+    "1115": [Function],
+    "1182": [Function],
+    "1184": [Function],
+    "1185": [Function],
+    "1186": [Function],
+    "1187": [Function],
+    "1231": [Function],
+  },
+}
