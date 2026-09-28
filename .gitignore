@@ -7,7 +7,10 @@ node_modules
 dist
 build
 *.tsbuildinfo
-
+.turbo
+.output
+migrations
+*.db
 # Generated files
 apps/web/src/routeTree.gen.ts
 local.db
